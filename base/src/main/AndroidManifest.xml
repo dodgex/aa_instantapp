@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	package="com.test">
+
+	<application
+		android:hardwareAccelerated="true"
+		android:label="Test"
+		android:largeHeap="true"
+		android:supportsRtl="true"
+		android:launchMode="singleInstance"
+		android:theme="@style/Theme.AppCompat"
+		android:allowBackup="false"
+		android:fullBackupOnly="false"
+		android:fullBackupContent="false">
+
+		<!-- START -->
+		<activity
+			android:name="com.test.StartActivity_"
+			android:exported="true"
+			android:launchMode="singleTop"
+			android:screenOrientation="portrait"
+			android:stateNotNeeded="true"
+			android:windowSoftInputMode="stateAlwaysHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="https" />
+				<data android:host="test.com" />
+				<data android:path="/test" />
+			</intent-filter>
+
+			<meta-data
+				android:name="default-url"
+				android:value="https://test.com/test" />
+		</activity>
+
+	</application>
+</manifest>
